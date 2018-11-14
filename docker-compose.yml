@@ -1,0 +1,26 @@
+version: "3"
+services:
+  fib:
+    build:
+      context: ./
+      dockerfile: docker-fib
+    ports:
+     - "32001:32001"
+    environment:
+     - FIB_PORT=32001
+    depends_on:
+     - "store"
+  store:
+    build:
+      context: ./
+      dockerfile: docker-store
+    ports:
+     - "27017:27017"
+    volumes:
+      - store_vol:/data/db
+volumes:
+  store_vol:
+    driver: local
+
+
+

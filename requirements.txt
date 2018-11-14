@@ -1,0 +1,4 @@
+Flask==0.10.1
+mongoengine==0.15.0
+pytest==3.5.0
+psutil==5.4.3
